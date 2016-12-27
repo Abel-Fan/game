@@ -323,11 +323,11 @@ games.prototype={
                             }
 
                             localStorage.messages=JSON.stringify(messages);
-
-                            $(that.zt[7]).find(".one").text(messages[0].name+"/"+messages[0].score||"0");
-                            $(that.zt[7]).find(".two").text(messages[1].name+"/"+messages[1].score||"0");
-                            $(that.zt[7]).find(".three").text(messages[2].name+"/"+messages[2].score||"0");
                             $(that.zt[5]).find(".new").text(that.name+"/"+zongfen);
+                            $(that.zt[7]).find(".one").text(messages[0].name+"/"+messages[0].score);
+                            $(that.zt[7]).find(".two").text(messages[1].name+"/"+messages[1].score);
+                            $(that.zt[7]).find(".three").text(messages[2].name+"/"+messages[2].score);
+
                         }
                         var xue = new chuxue(that.canvas,that.cobj,that.person.y);
                         that.audio[1].play();
