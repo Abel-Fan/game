@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<script>
+    var num=0;
+    var t = setInterval(function(){
+        num++;
+        console.log(num);
+        if(num>100){
+            clearInterval(t);
+        }
+    },50);
+</script>
+<body>
+
+</body>
+</html>

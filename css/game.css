@@ -1,0 +1,171 @@
+body{
+    margin:0;padding:0;
+    overflow: hidden;
+}
+canvas{
+    background:url(../img/ludi.png) 0 470px repeat-x,url(../img/home.png) 0 365px repeat-x;
+    background-color: aqua;
+}
+ul,li{
+    list-style: none;
+}
+.start{
+    width:600px;height:420px;
+    position:fixed;top:0;bottom:0;right:0;left:0;
+    margin:auto;
+    background: url(../img/start.png);
+    z-index: 999;
+    transition:translate 2s ease;
+    animation:one 2s ease;
+    text-align: center;
+    /*display: none;*/
+}
+.start>div{
+    width:180px;height:60px;
+    background: url(../img/star.png) no-repeat;
+    position:absolute;left:0;right:0;bottom:40px;
+    margin:0 auto;
+}
+.start>.name{
+    margin-top:250px;
+}
+
+.end{
+    width:512px;height:358px;
+    position:fixed;top:0;bottom:0;right:0;left:0;
+    margin:auto;
+    background: url(../img/end.png);
+    z-index: 900;
+    transition:translate 2s ease;
+    animation:one 2s ease;
+    display: none;
+}
+.end>div:first-child{
+    width:180px;height:60px;
+    background: url(../img/star.png) no-repeat;
+    position:absolute;left:0;right:0;bottom:40px;
+    margin:0 auto;
+}
+.end ul{
+    margin-top:120px;
+    padding-left:150px ;
+}
+.end ul li{
+    color:#333;font-size: 18px;font-weight: bold;
+    padding: 2px;
+}
+.end p{
+    text-align: center;
+    color:#333;
+    font-size: 20px;
+    font-weight: bold;
+}
+.end p span{
+    color:#82CAFF;
+}
+.zz{
+    width:100%;height:100%;
+    position:fixed;top:0;left:0;
+    z-index: 100;
+    animation:zzone 2s ease forwards;
+    /*background-position: ;*/
+}
+.defen{
+    width:160px;height:95px;
+    position:fixed;top:70px;left:100px;
+    z-index: 50;
+    background:url(../img/defen.png);
+    background-size: contain;
+    display: none;
+    text-align: center;
+    font-size: 20px;
+    line-height: 100px;
+}
+.life{
+    width:160px;height:95px;
+    position:fixed;top:50px;left:400px;
+    z-index: 50;
+    background:url(../img/life.png) no-repeat;
+    background-size: contain;
+    display: none;
+    text-align: center;
+    font-size: 20px;
+    line-height: 100px;
+}
+.gold{
+    width:160px;height:95px;
+    position:fixed;top:70px;left:800px;
+    z-index: 50;
+    background:url(../img/gold.png) no-repeat;
+    background-size: contain;
+    display: none;
+    text-align: center;
+    font-size: 20px;
+    line-height: 100px;
+}
+.ku{
+    width:225px;height:262px;
+    position:fixed;left:300px;top:100px;
+    z-index: 100;
+    background: url(../img/ku.png) no-repeat;
+    opacity: 0;
+
+}
+.stop{
+    width:50px;height:40px;
+    position:fixed;right:50px;bottom:50px;
+    z-index: 100;
+    display: none;
+}
+.stop>span{
+    color:#fff;
+    font-size:30px;
+    text-align: center;
+}
+@keyframes one {
+     0%{
+         transform:translate(0,-500px);
+     }
+     100%{
+         transform:translate(0,0px);
+     }
+ }
+
+@keyframes two {
+    0%{
+        transform:translate(0,0);
+    }
+    100%{
+        transform:translate(0,-700px);
+    }
+}
+@keyframes zzone {
+    0%{
+        background: rgba(0,0,0,0.2);
+    }
+    100%{
+        background: rgba(0,0,0,0.7);
+    }
+}
+@keyframes zztwo {
+    0%{
+        background: rgba(0,0,0,0.7);
+    }
+    50%{
+        background:rgba(0,0,0,1)
+    }
+    100%{
+        background: rgba(0,0,0,0);
+    }
+}
+@keyframes ku {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}

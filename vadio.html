@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>x`
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<canvas></canvas>
+<audio src="audio/1.mp3" controls="controls" loop="loop"></audio>
+</body>
+<script>
+//    var audio = document.querySelector("audio");
+//    var audioObj = new AudioContext();
+//    var sources = audioObj.createMediaElementSource(audio);  //音频源
+//    var analyser = audioObj.createAnalyser(sources);         //分析器
+//    //音频源-》分析器-》设备当中
+//    sources.connect();
+//    setInterval(function(){
+//        cobj.cli
+//    },50);
+
+//    analyser.getByteFrequencyData(array);
+//    console.log(array);
+
+
+    window.onload=function(){
+//            var video=document.querySelector("video");
+//            var btn=document.querySelector("button");
+//            button.onclick=function(){
+//                video.play();
+//            }
+        var canvas = document.querySelector("canvas");
+        var cobj = canvas.getContext("2d");
+        var audio=document.querySelector("audio");
+        var audioObj=new AudioContext();
+        var sources=audioObj.createMediaElementSource(audio);
+
+        var analyser=audioObj.createAnalyser(sources);
+
+//            音频源
+        var arry = new Uint8Array(analyser.frequencyBinCount);
+//            分析器
+        sources.connect(analyser);
+        analyser.connect(audioObj.destination);
+
+        setInterval(function(){
+            var array=new Uint8Array(analyser.frequencyBinCount);
+            analyser.getByteFrequencyData(array);
+            var bili=arry.length/canvas.width;
+            cobj.save();
+            cobj.translate(0,150);
+            cobj.beginPath();
+            for(var i=0;i<arry.length;i++){
+                cobj.lineTo(i,-arry[i]);
+            }
+            cobj.stroke();
+            cobj.restore();
+        },50)
+
+
+
+
+
+    }
+</script>
+</html>
